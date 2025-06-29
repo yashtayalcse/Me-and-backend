@@ -20,5 +20,10 @@ app.use(cookieParser());
 // middlewares always use a 'next' flag which just tells that i am done, now it's next middleware's turn :)
 
 
+//routes import 
+import userRouter from './routes/user.routes.js'
+
+//routes declaration
+app.use("/api/v1/users", userRouter)
 
 export { app }
