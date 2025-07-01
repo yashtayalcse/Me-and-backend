@@ -5,14 +5,14 @@ import { upload } from "../middlewares/multer.middleware.js";
 const router = Router();
 
 router.route('/register').post(
-    // a middleware 
+    // a middleware - this extracts the file fields (avatar, coverImage ), saves them to the disk, adds file metadata to req.files
     upload.fields([
         {
             name: "avatar",
             maxCount: 1
         },
         {
-            name: "coverImage",
+            name: "coverImage", //agar ye naam kee file nahi aayi, toh multer issey req.files mein bhi nahi dalega
             maxCount: 1
         }
     ]),
